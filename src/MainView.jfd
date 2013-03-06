@@ -1,0 +1,326 @@
+JFDML JFormDesigner: "5.1.0.2.64" Java: "1.6.0_29" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "default:grow"
+			"$rowSpecs": "default, default:grow, bottom:41dlu"
+		} ) {
+			name: "this"
+			"title": "Текстовый редактор"
+			"$sizePolicy": 0
+			"defaultCloseOperation": 0
+			"$locationPolicy": 1
+			"minimumSize": new java.awt.Dimension( 600, 400 )
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/icons/Component.png" )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			addEvent( new FormEvent( "java.awt.event.ComponentListener", "componentResized", "thisComponentResized", true ) )
+			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+				name: "toolBar1"
+				"floatable": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "newButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/List.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "openButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Folder.png" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "openButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "saveButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Save.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "saveAsButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Download.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveAsButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JToolBar$Separator" ) {
+					name: "separator3"
+					"separatorSize": new java.awt.Dimension( 40, 10 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "copyButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Copy.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "copyButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "cutButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Cut.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cutButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "pasteButton"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Paste.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "pasteButtonActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) )
+			add( new FormContainer( "javax.swing.JSplitPane", new FormLayoutManager( class javax.swing.JSplitPane ) ) {
+				name: "splitPane1"
+				"orientation": 0
+				"dividerSize": 14
+				"oneTouchExpandable": true
+				"dividerLocation": 150
+				add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
+					name: "desktopPane1"
+					"minimumSize": new java.awt.Dimension( 0, 130 )
+					"preferredSize": new java.awt.Dimension( 1, 1 )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "left"
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane2"
+					"minimumSize": new java.awt.Dimension( 25, 50 )
+					"preferredSize": new java.awt.Dimension( 18, 34 )
+					"maximumSize": new java.awt.Dimension( 32767, 200 )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "ResultTextArea"
+						"editable": false
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "right"
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridY": 2
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+				name: "toolBar2"
+				"floatable": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "ClearButton"
+					"text": "Очистка"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Trash.png" )
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ClearButtonActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JToolBar$Separator" ) {
+					name: "separator4"
+					"separatorSize": new java.awt.Dimension( 50, 10 )
+				} )
+				add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+					name: "toolBar3"
+					"border": new javax.swing.border.TitledBorder( null, "Видимость результатов", 4, 1, new java.awt.Font( "sansserif", 0, 12 ), null )
+					"minimumSize": new java.awt.Dimension( 176, 62 )
+					"floatable": false
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton1"
+						"text": "Видимо"
+						"$buttonGroup": new FormReference( "buttonGroup1" )
+					} )
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton2"
+						"text": "Невидимо"
+						"$buttonGroup": new FormReference( "buttonGroup1" )
+					} )
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridY": 3
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu1"
+					"text": "Файл"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "newItem"
+						"text": "Создать"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 78, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/List.png" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "openItem"
+						"text": "Открыть"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 79, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Folder.png" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "openItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "closeItem"
+						"text": "Закрыть"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Cancel.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "closeItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator2"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "saveItem"
+						"text": "Сохранить"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 83, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Save.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "saveAsItem"
+						"text": "Сохранить как"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Download.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "saveAsItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator1"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "exitItem"
+						"text": "Выход"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 81, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Exit.png" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exitItemActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu2"
+					"text": "Правка"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "undoItem"
+						"text": "Отменить"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 90, 130, false )
+						"enabled": false
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Undo.png" )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "redoItem"
+						"text": "Повторить"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 89, 130, false )
+						"enabled": false
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Redo.png" )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator5"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "copyItem"
+						"text": "Копировать"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 67, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Copy.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "copyItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "cutItem"
+						"text": "Вырезать"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 88, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Cut.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cutItemActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "pasteItem"
+						"text": "Вставить"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 86, 130, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Paste.png" )
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "pasteItemActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3"
+					"text": "Текст"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem10"
+						"text": "Содержание"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem10ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem11"
+						"text": "Постановка задачи"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem11ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator7"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem12"
+						"text": "Грамматика"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem12ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem13"
+						"text": "Классификация"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem13ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem14"
+						"text": "Диагностика"
+						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem14ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem15"
+						"text": "Алгоритм анализа"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem15ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem16"
+						"text": "Листинг"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem16ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "separator8"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem17"
+						"text": "Список литературы"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem17ActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu4"
+					"text": "Пуск"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "runItem"
+						"text": "Запуск"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 116, 0, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Play.png" )
+						"horizontalAlignment": 2
+						"enabled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "runItemActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu5"
+					"text": "Справка"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem18"
+						"text": "Помощь"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 112, 0, false )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Hint.png" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem18ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "aboutItem"
+						"text": "О программе"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/icons/Info.png" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "aboutItemActionPerformed", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 0 )
+			"size": new java.awt.Dimension( 600, 400 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "buttonGroup1"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 65, 645 )
+		} )
+		addBindingGroup( new FormBindingGroup( class org.jdesktop.beansbinding.BindingGroup ) {
+			"name": "bindingGroup"
+			addBinding( new FormBinding( "scrollPane2", "visible", "radioButton1", "selected" ) )
+		} )
+	}
+}
